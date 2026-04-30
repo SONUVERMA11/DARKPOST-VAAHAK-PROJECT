@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../theme/app_theme.dart';
 import '../services/encryption_service.dart';
 
@@ -194,13 +195,31 @@ class _IdentityScreenState extends State<IdentityScreen> {
               ),
             ),
 
-            const SizedBox(height: 40),
+            const SizedBox(height: 30),
 
             Center(
-              child: Text(
-                'DARKPOST v1.0 · NO INTERNET · NO SIM · NO IDENTITY',
-                style: AppTheme.mono(color: AppTheme.textMuted, size: 10),
-                textAlign: TextAlign.center,
+              child: GestureDetector(
+                onTap: () async {
+                  final uri = Uri.parse('https://github.com/SONUVERMA11');
+                  if (await canLaunchUrl(uri)) {
+                    await launchUrl(uri, mode: LaunchMode.externalApplication);
+                  }
+                },
+                child: Column(
+                  children: [
+                    Text(
+                      'DARKPOST v1.0 · NO INTERNET · NO SIM',
+                      style: AppTheme.mono(color: AppTheme.textMuted, size: 10),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'MADE WITH LOVE BY SONU VERMA ❤️',
+                      style: AppTheme.mono(color: AppTheme.primary, size: 10, weight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
             ),
             const SizedBox(height: 16),
