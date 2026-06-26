@@ -100,3 +100,8 @@ Darkpost bridges the decentralized mesh with centralized fiat.
   <p><i>We are the signal in the noise.</i></p>
   <img src="https://img.shields.io/badge/CYBERPUNK-APPROVED-FF3B5C?style=for-the-badge" />
 </div>
+
+
+---
+Made with ❤️ by [Sonu Verma](https://github.com/SONUVERMA11)
+
